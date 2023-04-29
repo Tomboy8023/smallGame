@@ -54,7 +54,6 @@ class Game(object):
 
     def getResult(self, personFist, computerFist):
         if personFist == computerFist:
-            print(personFist, computerFist)
             self.showResult("平局", personFist, computerFist)
         elif (personFist == "剪刀" and computerFist == "石头") or (personFist == "石头" and computerFist == "布") \
                 or (personFist == "布" and computerFist == "剪刀"):
@@ -68,25 +67,30 @@ class Game(object):
             self.showResult("胜利", personFist, computerFist)
 
     def showResult(self, result, personFist, computerFist):
-        print(f"{self.person.name} VS {self.computer.name}：")
-        print("我方出拳：", personFist)
-        print(f"{self.computer.name}出拳：", computerFist)
+        print("\n==========================对战结果==========================")
+        # if result == "平局":
+        #     print("==========================平局！==========================")
+        # elif result == "胜利":
+        #     print(f"=========================={self.person.name}-胜利！==========================")
+        # elif result == "失败":
+        #     print(f"=========================={self.computer.name}-胜利！==========================")
 
-        if result == "平局":
-            print("==========================平局！==========================")
-        elif result == "胜利":
-            print(f"=========================={self.person.name}-胜利！==========================")
-        elif result == "失败":
-            print(f"=========================={self.computer.name}-胜利！==========================")
-
+        print("玩家出拳：", personFist)
+        print(f"电脑-{self.computer.name}出拳：", computerFist)
         print(f"{self.person.name} VS {self.computer.name}：<<<{result}>>>")
         print(f"对战次数：{self.count}")
-        print(f"比分：{self.person.name}：{self.person.score}，{self.computer.name}：{self.computer.score}")
+        print(f"比分：{self.person.name}：{self.person.score}，{self.computer.name}：{self.computer.score}\n")
+        if self.person.score < self.computer.score:
+            print(f"玩家-{self.person.name}落后了，加油哦")
+        elif self.person.score == self.computer.score:
+            print("暂时平分秋色，玩家加油哦！")
+        else:
+            print(f"玩家-{self.person.name}处于领先位置，继续保持")
         print(f"<<<<<<<<<<<<<<<<<<<<<<<< {self.person.name}-{result}！ >>>>>>>>>>>>>>>>>>>>>>>>\n")
 
 
 if __name__ == '__main__':
     person = Person("Tomboy", 0)
-    computer = Computer("幺叔", 0)
+    computer = Computer("长空&无名", 0)
     game = Game(person, computer)
     game.start()
