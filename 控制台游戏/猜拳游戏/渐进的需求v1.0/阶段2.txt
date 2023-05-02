@@ -1,0 +1,5 @@
+编写计算机类（Computer）
+ 需求
+    1 属性有名字name  , 积分 score
+    2 行为 出拳（showFist）
+    3 测试计算机出拳
