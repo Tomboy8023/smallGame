@@ -1,0 +1,10 @@
+GAME_TITLE = "坦克大战"  # 游戏标题
+ICON_PATH = "images/tankGame.ico"  # 游戏图标路径
+WIDTH = 1208  # 窗口的宽度
+HEIGHT = 809  # 窗口的高度
+WALL_NUMBER = 5  # 墙的数量
+WALL_WIDTH = 60  # 墙的宽度
+WALL_HEIGHT = 60  # 墙的高度
+ENEMY_TANK_NUMBER = 18  # 敌方坦克的数量
+ENEMY_TANK_WIDTH = 60  # 敌方坦克图片宽度
+ENEMY_TANK_HEIGHT = 60  # 敌方坦克图片高度
